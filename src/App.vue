@@ -1,16 +1,11 @@
 <template><component :is="layout"></component></template>
 
 <script setup lang="ts">
-import { defineComponent, onMounted } from "vue";
+import { defineComponent } from "vue";
 import { computed } from "vue";
 import AppLayout from "./layouts/AppLayout.vue";
 
 const layout = computed(() => AppLayout);
-
-function setTheme() {
-  localStorage.setItem("site-theme", "github-dark");
-  document.documentElement.setAttribute("site-theme", "github-dark");
-}
 
 defineComponent({ name: "App" });
 </script>
