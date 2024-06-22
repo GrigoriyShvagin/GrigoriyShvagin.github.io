@@ -15,6 +15,12 @@ defineComponent({ name: "App" });
   padding: 0;
   margin: 0;
 }
+a {
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+}
+
 :root {
   --main-bg: #282a36;
   --bg-text: #313340;

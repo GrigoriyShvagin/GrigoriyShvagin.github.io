@@ -2,34 +2,58 @@
   <div class="side_bar_block">
     <div class="links_block">
       <div class="top_items">
-        <div
-          class="sidebar_svg"
-          ref="home"
-          :class="{ active: $route.path == '/' }"
-        >
-          <Icon icon="uil:copy" />
-        </div>
-        <div
-          class="sidebar_svg"
-          ref="github"
-          :class="{ active: $route.path == 'github' }"
-        >
-          <Icon icon="hugeicons:github" />
-        </div>
-        <div class="sidebar_svg" :class="{ active: $route.path == 'projects' }">
-          <Icon icon="solar:code-bold" />
-        </div>
-        <div class="sidebar_svg" :class="{ active: $route.path == 'contacts' }">
-          <Icon icon="material-symbols:mail-outline" />
-        </div>
+        <router-link to="/">
+          <div
+            class="sidebar_svg"
+            ref="home"
+            :class="{ active: $route.path == '/' }"
+          >
+            <Icon icon="uil:copy" />
+          </div>
+        </router-link>
+        <router-link to="/github">
+          <div
+            class="sidebar_svg"
+            ref="github"
+            :class="{ active: $route.path == '/github' }"
+          >
+            <Icon icon="hugeicons:github" />
+          </div>
+        </router-link>
+        <router-link to="/projects">
+          <div
+            class="sidebar_svg"
+            :class="{ active: $route.path == '/projects' }"
+          >
+            <Icon icon="solar:code-bold" />
+          </div>
+        </router-link>
+        <router-link to="/contacts">
+          <div
+            class="sidebar_svg"
+            :class="{ active: $route.path == '/contacts' }"
+          >
+            <Icon icon="material-symbols:mail-outline" />
+          </div>
+        </router-link>
       </div>
       <div class="bottom_items">
-        <div class="sidebar_svg" :class="{ active: $route.path == 'resume' }">
-          <Icon icon="material-symbols:account-circle-outline" />
-        </div>
-        <div class="sidebar_svg" :class="{ active: $route.path == 'settings' }">
-          <Icon icon="material-symbols-light:settings-outline" />
-        </div>
+        <router-link to="/resume">
+          <div
+            class="sidebar_svg"
+            :class="{ active: $route.path == '/resume' }"
+          >
+            <Icon icon="material-symbols:account-circle-outline" />
+          </div>
+        </router-link>
+        <router-link to="settings">
+          <div
+            class="sidebar_svg"
+            :class="{ active: $route.path == '/settings' }"
+          >
+            <Icon icon="material-symbols-light:settings-outline" />
+          </div>
+        </router-link>
       </div>
     </div>
     <div class="exlorer_block">
@@ -43,12 +67,11 @@
       </p>
       <Transition name="showPortfolio"
         ><div class="files_list" v-if="showPortfolio">
-          <p :class="{ activeFile: $route.path == '/' }">
-            <Icon icon="logos:vue" />MainPage.vue
-          </p>
-          <p :class="{ activeFile: $route.path == '/feafae' }">
-            <Icon icon="logos:vue" />MainPage.vue
-          </p>
+          <router-link v-for="item in allFiles" :to="item.link">
+            <p :class="{ activeFile: $route.path == item.link }">
+              <Icon :icon="item.icon" />{{ item.text }}
+            </p>
+          </router-link>
         </div></Transition
       >
     </div>
@@ -59,7 +82,13 @@
 import { Icon } from "@iconify/vue/dist/iconify.js";
 import { ref } from "vue";
 
-const showPortfolio = ref(false);
+defineProps({
+  allFiles: {
+    type: Object,
+  },
+});
+
+const showPortfolio = ref(true);
 </script>
 
 <style lang="scss">
