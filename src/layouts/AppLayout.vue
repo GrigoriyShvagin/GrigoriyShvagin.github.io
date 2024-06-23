@@ -4,7 +4,9 @@
     <div class="layout_content">
       <SideBar :allFiles="allFiles" />
       <div class="pages_block">
-        <PagesBlock :allFiles="allFiles" /><router-view></router-view>
+        <PagesBlock :allFiles="allFiles" /><router-view
+          class="content_page"
+        ></router-view>
       </div>
     </div>
   </div>
@@ -40,12 +42,17 @@ const allFiles = {
   githubFile: {
     link: "/github",
     text: "github.md",
-    icon: "hugeicons:github",
+    icon: "material-symbols:markdown",
   },
 };
 </script>
 
 <style lang="scss">
+.content_page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 .main_layout {
   background: var(--main-bg);
 }
