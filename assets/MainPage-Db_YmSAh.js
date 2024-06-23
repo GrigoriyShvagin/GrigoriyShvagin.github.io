@@ -1,1 +1,0 @@
-import{o as a,c as r}from"./index-C-VfMnLG.js";const s=(e,c)=>{const t=e.__vccOpts||e;for(const[o,n]of c)t[o]=n;return t},_={},f={class:"main_page_block"};function i(e,c){return a(),r("div",f,"faefae")}const p=s(_,[["render",i]]);export{p as default};
