@@ -4,9 +4,7 @@
       {{ item }}
     </div>
     <div class="header">My most valuable projects:</div>
-    <div class="projects_list">
-      <div class="project" v-for="item in myProjects"></div>
-    </div>
+    <div class="projects_list"></div>
   </div>
 </template>
 
@@ -14,12 +12,12 @@
 import { onMounted } from "vue";
 import { useAllFilesStore } from "../store";
 
-const myProjects = {
-  chemBase: {
-    data: "Jan24-May24",
-    link: "https://github.com/GrigoriyShvagin/chem-base",
-  },
-};
+// const myProjects = {
+//   chemBase: {
+//     data: "Jan24-May24",
+//     link: "https://github.com/GrigoriyShvagin/chem-base",
+//   },
+// };
 
 const useFilesStore = useAllFilesStore();
 
