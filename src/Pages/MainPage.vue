@@ -1,5 +1,8 @@
 <template>
   <div class="main_page_block">
+    <div class="bg_text">
+      <h1>Frontend Developer</h1>
+    </div>
     <div class="text_block">
       <div class="text_name">Shvagin Grigoriy</div>
       <div class="text_profession">{{ reactText }}</div>
@@ -9,14 +12,25 @@
           <div
             class="skill"
             v-for="item in skillSet"
-            :style="styleObject(item)"
+            :style="{ ...styleObject(item) }"
           >
             {{ item.name }}
           </div>
         </div>
       </div>
+      <div class="bttn_block">
+        <router-link to="/resume"
+          ><button type="button" class="bttn resume_bttn">
+            Resume
+          </button></router-link
+        >
+        <router-link to="/contact"
+          ><button type="button" class="bttn contact_bttn">
+            Contact
+          </button></router-link
+        >
+      </div>
     </div>
-    <div class="textBg">Frontend Developer</div>
     <div class="img_block"><img src="/me.jpg" alt="" /></div>
   </div>
 </template>
@@ -71,8 +85,45 @@ onMounted(initialsText);
     background: transparent;
   }
 }
+.bg_text {
+  position: absolute;
+  font-size: 5rem;
+  line-height: 1.1;
+  color: var(--bg-text);
+  z-index: 0;
+  left: 5%;
+  top: 25%;
+}
+.bttn_block {
+  display: flex;
+}
+.bttn {
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+  color: #eee;
+  cursor: pointer;
+  width: max-content;
+}
+.resume_bttn {
+  background: var(--accent-color);
+  margin-right: 1.5rem;
+  font-weight: 600;
+  border: none;
+  &:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+}
+.contact_bttn {
+  background: none;
+  border: 2px solid var(--accent-color);
+  font-weight: 600;
+  &:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+}
 .skill_set {
   background: var(--transparent-bg);
+  z-index: 2;
   color: var(--text-color);
   margin: 30px 0;
   padding: 20px;
@@ -107,6 +158,7 @@ onMounted(initialsText);
   position: relative;
   .text_block {
     padding: 20px;
+    z-index: 2;
     width: 60%;
     display: flex;
     flex-direction: column;
