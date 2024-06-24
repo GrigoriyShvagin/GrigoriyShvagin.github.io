@@ -87,6 +87,7 @@ onMounted(initialsText);
 }
 .bg_text {
   position: absolute;
+  text-transform: uppercase;
   font-size: 5rem;
   line-height: 1.1;
   color: var(--bg-text);
