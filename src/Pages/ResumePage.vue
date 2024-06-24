@@ -31,6 +31,9 @@ h3 {
   }
 }
 .resume_block {
+  overflow-y: scroll;
+  height: 85vh;
+  scrollbar-color: var(--accent-color);
   padding: 20px 70px 0 70px;
   display: flex;
   align-items: center;
