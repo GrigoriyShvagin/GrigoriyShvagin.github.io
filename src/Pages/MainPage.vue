@@ -65,7 +65,7 @@ function styleObject(item: { name: string; borderColor: string }): object {
   };
 }
 
-function initialsText() {
+function initialsText(): void {
   if (reactText.value.length < myInitials.length) {
     reactText.value += myInitials[reactText.value.length];
     setTimeout(initialsText, 100);

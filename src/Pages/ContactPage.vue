@@ -1,6 +1,6 @@
 <template>
   <div class="contact_block">
-    <h3 class="header">Find Me On</h3>
+    <h3>Find Me On</h3>
     <div class="contact_list">
       <p class="header_list">— socials:</p>
       <p class="contact">

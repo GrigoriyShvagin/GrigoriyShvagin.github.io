@@ -4,7 +4,6 @@
     <div class="">
       <img src="/resume.svg" alt="" srcset="" />
       <img src="/resume2.svg" alt="" srcset="" />
-      <img src="/resume3.svg" alt="" srcset="" />
     </div>
   </div>
 </template>

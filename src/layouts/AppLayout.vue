@@ -17,9 +17,34 @@
 import SideBar from "../components/SideBar.vue";
 import PagesBlock from "../components/PagesBlock.vue";
 import Header from "../components/Header.vue";
-import { useAllFilesStore } from "../store";
 
-const allFiles = useAllFilesStore().allFiles;
+const allFiles = {
+  homeFile: {
+    link: "/",
+    text: "MainPage.vue",
+    icon: "logos:vue",
+  },
+  resumeFile: {
+    link: "/resume",
+    text: "resume.html",
+    icon: "vscode-icons:file-type-html",
+  },
+  contactFile: {
+    link: "/contacts",
+    text: "contacts.ts",
+    icon: "vscode-icons:file-type-typescript-official",
+  },
+  projectsFile: {
+    link: "/projects",
+    text: "projects.json",
+    icon: "vscode-icons:file-type-light-json",
+  },
+  githubFile: {
+    link: "/github",
+    text: "github.md",
+    icon: "material-symbols:markdown",
+  },
+};
 </script>
 
 <style lang="scss">
